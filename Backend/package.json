@@ -1,11 +1,15 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "backend for PEJK app",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Maxjessome/PEJK.git"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +19,7 @@
     "del": "^6.0.0",
     "express": "^4.17.1",
     "method-override": "^3.0.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1"
   }
 }
