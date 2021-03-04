@@ -41,7 +41,7 @@ app.get('/Units/add', (req, res) => {
     });
 });
 
-app.get('/Employee/add', (req, res) =>{
+app.get('/Employee/add', (req, res) => {
     const {Employee_ID, Name, Phone_Num, Address, Username, Password, Maitenance_Job_ID} = req.query;
     const INSERT_EMPLOYEES_QUERY = `INSERT INTO Employee (Employee_ID, Name, Phone_Num, Address, Username, Password, Maitenance_Job_ID) VALUES('${Employee_ID}', ${Name}, ${Phone_Num}, ${Address}, ${Username}, ${Password}, ${Maitenance_Job_ID})`
     connection.query(INSERT_EMPLOYEES_QUERY, (err, results) => {

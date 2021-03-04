@@ -1,11 +1,19 @@
 {
   "name": "backend",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "Backend for PEJKapp",
+=======
+  "description": "backend for PEJK app",
+>>>>>>> fd24725721e8e75afaf7b42a0880ba0da6cc3fb8
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Maxjessome/PEJK.git"
   },
   "author": "",
   "license": "ISC",
