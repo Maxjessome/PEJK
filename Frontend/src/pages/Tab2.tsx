@@ -7,16 +7,22 @@ const Tab2: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Tab 2</IonTitle>
+          <IonTitle>Ionic Blank</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Tab 2</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer name="Tab 2 page" />
+      <IonContent className="ion-padding">
+        The world is your oyster.
+        <p>
+          If you get lost, the{' '}
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://ionicframework.com/docs/"
+          >
+            docs
+          </a>{' '}
+          will be your guide.
+        </p>
       </IonContent>
     </IonPage>
   );

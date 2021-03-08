@@ -26,7 +26,7 @@ connection.connect(err => {
 app.use(cors());
 
 app.get('/', (req, res) => {
-    res.send('go to /Units to see units, go to /Building to see buildings, go to /Employee to see employees')
+    res.send('go to /Units to see units, go to /Building to see buildings, go to /Employee to see employees || Use /add to add ')
 });
 
 app.get('/Units/add', (req, res) => {
