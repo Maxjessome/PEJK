@@ -6,9 +6,14 @@ const e = require('express');
 const app = express();
 
 const SELECT_ALL_UNITS_QUERY = 'SELECT * From Units';
+const SELECT_UNIT_BEDS_QUERY = 'SELECT * From Units ORDER BY Bedrooms';
+const SELECT_BASEMENT_UNIT_QUERY = 'SELECT * From Units ORDER BY Basement';
 const SELECT_ALL_BUILDINGS_QUERY = 'SELECT * From Building';
+const SELECT_BUILDING_ON_OFF_CAMPUS_QUERY = 'SELECT * From Building ORDER BY On_Off_Campus';
 const SELECT_ALL_EMPLOYEES_QUERY = 'SELECT * From Employee';
 const SELECT_ALL_MAINTENANCE_QUERY = 'SELECT * From Maintenance';
+
+
 
 const connection = mysql.createConnection({
     host: 'pejk-1.cmjsajum1a1j.us-east-2.rds.amazonaws.com',
@@ -94,8 +99,47 @@ app.get('/Units', (req, res) => {
     });
 });
 
+app.get('/Units/Bedrooms', (req, res) => {
+    connection.query(SELECT_UNIT_BEDS_QUERY, (err, results) => {
+        if(err){
+            return res.send(err)
+        }
+        else{
+            return res.json({
+                data: results
+            })
+        }
+    });
+});
+
+app.get('/Units/Basement', (req, res) => {
+    connection.query(SELECT_BASEMENT_UNIT_QUERY, (err, results) => {
+        if(err){
+            return res.send(err)
+        }
+        else{
+            return res.json({
+                data: results
+            })
+        }
+    });
+});
+
 app.get('/Building', (req, res) =>{
     connection.query(SELECT_ALL_BUILDINGS_QUERY, (err, results) =>{
+        if(err){
+            return res.send(err)
+        }
+        else{
+            return res.json({
+                data: results
+            })
+        }
+    })
+})
+
+app.get('/Building/On_Off_Campus', (req, res) =>{
+    connection.query(SELECT_BUILDING_ON_OFF_CAMPUS_QUERY, (err, results) =>{
         if(err){
             return res.send(err)
         }
