@@ -1,4 +1,5 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonButton, IonToast } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonButton, IonToast, IonMenuButton } from '@ionic/react';
+
 import axios from 'axios';
 import './Tab3.css';
 import React, { useEffect, useState } from 'react';
@@ -31,7 +32,7 @@ const Tab3: React.FC = () => {
         <IonToast isOpen={saving} onDidDismiss={() => setSaving(false)} message="Adding" duration = {1000}/>
         <IonButton onClick = {addEmployee}>Add Employee</IonButton>
         <IonList>
-          {units.map(unit => (<Unit address = {unit.Unit_Name} rent = {unit.Unit_ID} description = {unit.Laundry} image = 'https://images.unsplash.com/photo-1494548162494-384bba4ab999?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8c3VucmlzZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80'/>
+          {units.map(unit => (<Unit address = {unit.Unit_Name} Unit_ID = {unit.Unit_ID} Bedrooms = {unit.Bedrooms} image = 'https://images.unsplash.com/photo-1494548162494-384bba4ab999?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8c3VucmlzZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80'/>
             ))}
         </IonList>
       </IonContent>
