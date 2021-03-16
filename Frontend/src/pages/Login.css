@@ -1,0 +1,27 @@
+
+ion-button{
+    --background: #F96125;
+}
+
+ion-title{
+    --color: #F96125;
+}
+
+ion-item-divider{
+    --color: #000000;
+}
+
+:root{
+    --ion-background-color: #E5E5E5;
+    --ion-tab-bar-background: #FFFFFF;
+    --ion-tab-bar-color:#F96125;
+    --ion-tab-bar-color-selected: #666666;
+    --ion-tab-bar-border-color: #F96125;
+    --ion-border-color: #F96125;
+    --ion-item-focusable: #F96125;
+
+}
+
+ion-tab{
+        --background: #FFFFFF;
+}

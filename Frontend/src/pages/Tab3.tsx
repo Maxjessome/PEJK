@@ -15,6 +15,9 @@ const Tab3: React.FC = () => {
     axios.get('http://localhost:3000/Employee/add?Employee_ID=4&Name="MaxCarl"&Phone_Num=90220&Address="1414"&Username="maxcarl"&Password="maxcarl"&Maintenance_Job_ID=4').then(()=> setSaving(false))
     
   }
+  const sortBedrooms = () => {
+    
+  }
   return (
     <IonPage>
       <IonHeader>
@@ -31,7 +34,7 @@ const Tab3: React.FC = () => {
         <IonToast isOpen={saving} onDidDismiss={() => setSaving(false)} message="Adding" duration = {1000}/>
         <IonButton onClick = {addEmployee}>Add Employee</IonButton>
         <IonList>
-          {units.map(unit => (<Unit address = {unit.Unit_Name} rent = {unit.Unit_ID} description = {unit.Laundry} image = 'https://images.unsplash.com/photo-1494548162494-384bba4ab999?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8c3VucmlzZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80'/>
+          {units.map(unit => (<Unit Unit_ID = {unit.Unit_ID} Laundry = {unit.Laundry} Utilities = {unit.Utilities} Bedrooms = {unit.Bedrooms} Unit_Name = {unit.Unit_Name} Den = {unit.Den} In_Unit_WasherDryer = {unit.In_Unit_WasherDryer} LED_Lighting = {unit.LED_Lighting} Basement = {unit.Basement} NSPI_Meter = {unit.NSPI_Meter} image = 'https://images.unsplash.com/photo-1494548162494-384bba4ab999?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8c3VucmlzZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80'/>
             ))}
         </IonList>
       </IonContent>
