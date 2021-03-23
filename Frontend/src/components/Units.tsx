@@ -12,10 +12,10 @@ interface UnitsProps{
     Basement: string; 
     NSPI_Meter: string;
     image : string;
-    /*rent: string;*/
+    Monthly_Rent: string;
 
 }
-const Unit: React.FC<UnitsProps>=({Unit_ID, Laundry, Utilities, Bedrooms, Unit_Name, Den, In_Unit_WasherDryer, LED_Lighting, Basement, NSPI_Meter, image})=>{
+const Unit: React.FC<UnitsProps>=({Unit_ID, Laundry, Utilities, Bedrooms, Unit_Name, Den, In_Unit_WasherDryer, LED_Lighting, Basement, NSPI_Meter, image, Monthly_Rent})=>{
     
     return(
         <IonCard>
