@@ -4,6 +4,7 @@ import {
   IonIcon,
   IonLabel,
   IonRouterOutlet,
+  IonSplitPane,
   IonTabBar,
   IonTabButton,
   IonTabs,
@@ -14,10 +15,12 @@ import Login from './pages/Login';
 import Building_Selection from './pages/Building_Selection';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
+import {Menu} from './components/Menu';
 
 import React from "react";
 import ReactDOM from "react-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
+
 
 
 
@@ -37,8 +40,8 @@ import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
-/* Theme variables */
-import './theme/variables.css';
+
+
 
 const App: React.FC = () => (
   <Auth0Provider
@@ -48,6 +51,13 @@ const App: React.FC = () => (
     >
   <IonApp>
     <IonReactRouter>
+      <Menu/>
+        <IonRouterOutlet  id="main">
+          <Route path="/Building_Selection" component={Building_Selection} exact={true} />
+          <Route path="/page-1" component={Tab2} exact={true} />
+          <Route path="/page-2" component={Tab3} exact={true} />
+          <Route exact path="/" render={() => <Redirect to="/home" />} />
+        </IonRouterOutlet>
       <IonTabs>
         <IonRouterOutlet>
           <Route exact path="/Login">

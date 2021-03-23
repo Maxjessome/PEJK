@@ -1,61 +1,41 @@
-import React from 'react';
-import { IonMenu, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonRouterOutlet } from '@ionic/react';
-
-export const SideMenu: React.FC = () => {
-    
+import {
+    IonMenu,
+    IonHeader,
+    IonToolbar,
+    IonTitle,
+    IonContent,
+    IonList,
+    IonMenuToggle,
+    IonItem,
+    IonLabel,
+  } from "@ionic/react";
+  import React from "react";
+  
+  export const Menu = () => {
     return (
-  <>
-    <IonMenu side="start" menuId="first">
-      <IonHeader>
-        <IonToolbar color="primary">
-          <IonTitle>Start Menu</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent>
-        <IonList>
-          <IonItem>Menu Item</IonItem>
-          <IonItem>Menu Item</IonItem>
-          <IonItem>Menu Item</IonItem>
-          <IonItem>Menu Item</IonItem>
-          <IonItem>Menu Item</IonItem>
-        </IonList>
-      </IonContent>
-    </IonMenu>
-
-    <IonMenu side="start" menuId="custom" className="my-custom-menu">
-      <IonHeader>
-        <IonToolbar color="tertiary">
-          <IonTitle>Custom Menu</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent>
-        <IonList>
-          <IonItem>Menu Item</IonItem>
-          <IonItem>Menu Item</IonItem>
-          <IonItem>Menu Item</IonItem>
-          <IonItem>Menu Item</IonItem>
-          <IonItem>Menu Item</IonItem>
-        </IonList>
-      </IonContent>
-    </IonMenu>
-
-    <IonMenu side="end" type="push">
-      <IonHeader>
-        <IonToolbar color="danger">
-          <IonTitle>End Menu</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent>
-        <IonList>
-          <IonItem>Menu Item</IonItem>
-          <IonItem>Menu Item</IonItem>
-          <IonItem>Menu Item</IonItem>
-          <IonItem>Menu Item</IonItem>
-          <IonItem>Menu Item</IonItem>
-        </IonList>
-      </IonContent>
-    </IonMenu>
-    <IonRouterOutlet></IonRouterOutlet>
-  </>
-);
-}
+      <IonMenu side="end" contentId="main">
+        <IonHeader>
+          <IonToolbar color="light">
+            <IonTitle>MENU</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        <IonContent>
+          <IonList>
+            <IonMenuToggle auto-hide="false">
+              <IonItem button routerLink={"/Building_Selection"} routerDirection="none">
+                <IonLabel>Building Selection</IonLabel>
+              </IonItem>
+            </IonMenuToggle>
+            <IonMenuToggle auto-hide="false">
+              <IonItem button routerLink={"/page-1"} routerDirection="none">
+                <IonLabel>Page One</IonLabel>
+              </IonItem>
+              <IonItem button routerLink={"/page-2"} routerDirection="none">
+                <IonLabel>Page Two</IonLabel>
+              </IonItem>
+            </IonMenuToggle>
+          </IonList>
+        </IonContent>
+      </IonMenu>
+    );
+  };
