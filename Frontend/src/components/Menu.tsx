@@ -27,11 +27,11 @@ import {
               </IonItem>
             </IonMenuToggle>
             <IonMenuToggle auto-hide="false">
-              <IonItem button routerLink={"/page-1"} routerDirection="none">
-                <IonLabel>Page One</IonLabel>
+              <IonItem button routerLink={"/About_Us"} routerDirection="none">
+                <IonLabel>About us</IonLabel>
               </IonItem>
-              <IonItem button routerLink={"/page-2"} routerDirection="none">
-                <IonLabel>Page Two</IonLabel>
+              <IonItem button routerLink={"/Login"} routerDirection="none">
+                <IonLabel>Logout</IonLabel>
               </IonItem>
             </IonMenuToggle>
           </IonList>
