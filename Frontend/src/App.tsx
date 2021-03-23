@@ -10,12 +10,13 @@ import {
   IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, constructOutline, mapOutline, logInOutline, homeOutline } from 'ionicons/icons';
+import { ellipse, constructOutline, mapOutline, logInOutline, homeOutline, menuOutline } from 'ionicons/icons';
 import Login from './pages/Login';
 import Building_Selection from './pages/Building_Selection';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 import {Menu} from './components/Menu';
+
 
 import React from "react";
 import ReactDOM from "react-dom";
@@ -39,6 +40,7 @@ import '@ionic/react/css/text-alignment.css';
 import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
+import About_Us from './pages/About_Us';
 
 
 
@@ -54,8 +56,9 @@ const App: React.FC = () => (
       <Menu/>
         <IonRouterOutlet  id="main">
           <Route path="/Building_Selection" component={Building_Selection} exact={true} />
-          <Route path="/page-1" component={Tab2} exact={true} />
+          <Route path="/About_Us" component={About_Us} exact={true} />
           <Route path="/page-2" component={Tab3} exact={true} />
+          <Route path="/Login" component={Login} exact={true} />
           <Route exact path="/" render={() => <Redirect to="/home" />} />
         </IonRouterOutlet>
       <IonTabs>
@@ -69,18 +72,14 @@ const App: React.FC = () => (
           <Route exact path="/tab2">
             <Tab2 />
           </Route>
-          <Route path="/tab3">
-            <Tab3 />
+          <Route exact path="/About_Us">
+            <About_Us />
           </Route>
           <Route exact path="/">
             <Redirect to="/Login" />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="login" href = "/login">
-            <IonIcon icon ={logInOutline} />
-            <IonLabel>Login</IonLabel>
-          </IonTabButton>
           <IonTabButton tab="Building_Selection" href="/Building_Selection">
             <IonIcon icon={homeOutline} />
             <IonLabel>Building Search</IonLabel>
@@ -88,10 +87,6 @@ const App: React.FC = () => (
           <IonTabButton tab="tab2" href="/tab2">
             <IonIcon icon={mapOutline} />
             <IonLabel>Map</IonLabel>
-          </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon icon={constructOutline} />
-            <IonLabel>Maitenace</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>

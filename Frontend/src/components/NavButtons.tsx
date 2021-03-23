@@ -10,10 +10,7 @@ export const NavButtons = () => {
     let mediaQuery = window.matchMedia("(min-width: 768px)");
     mediaQuery.addListener(setMQuery);
 
-    return () => mediaQuery.removeListener(setMQuery);
-  }, []);
-
-  // MediaQueryListEvent { isTrusted: true, media: "(min-width: 768px)", matches: true ...}
+    return () => mediaQuery.removeListener(setMQuery);}, []);
   console.log(mQuery.matches);
 
   return (
@@ -22,9 +19,9 @@ export const NavButtons = () => {
         <IonMenuButton />
       ) : (
         <>
-          <IonButton routerLink={"/Tab1"}>Home </IonButton>
-          <IonButton routerLink={"/Login"}>One </IonButton>
-          <IonButton routerLink={"/Tab2"}>Two</IonButton>
+          <IonButton routerLink={"/About_Us"}>About us </IonButton>
+          <IonButton routerLink={"/Login"}>Logout </IonButton>
+          <IonButton routerLink={"/Tab2"}>Map</IonButton>
         </>
       )}
     </div>

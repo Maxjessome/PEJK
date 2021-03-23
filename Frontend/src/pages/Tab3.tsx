@@ -1,10 +1,10 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonButton, IonToast, IonMenuButton } from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonButton, IonToast, IonMenuButton, IonButtons } from '@ionic/react';
 
 import axios from 'axios';
 import './Tab3.css';
 import React, { useEffect, useState } from 'react';
 import Unit from '../components/Units';
-
+import { NavButtons } from '../components/NavButtons';
 const Tab3: React.FC = () => {
   const [units, setUnits] = useState<Array<any>>([]);
   const [saving, setSaving] = useState(false)
@@ -24,6 +24,9 @@ const Tab3: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonTitle>Maintenace</IonTitle>
+            <IonButtons slot="end">
+              <NavButtons/>
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
