@@ -1,9 +1,9 @@
-import { IonContent, IonItem, IonLabel, IonList, IonListHeader, IonSelect, IonSelectOption, IonPage, IonItemDivider, IonTitle } from '@ionic/react';
+import { IonContent, IonItem, IonLabel, IonList, IonListHeader, IonSelect, IonSelectOption, IonPage, IonItemDivider, IonTitle, IonButtons, IonToolbar } from '@ionic/react';
 import Listing from '../components/Buildings';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Tab1.css';
-
+import { NavButtons } from '../components/NavButtons';
 
 const Locations = {
   header: 'Location relative to Dalhousie/Smu campus',
@@ -37,9 +37,8 @@ export const Tab1: React.FC = () => {
       <IonContent>
         <IonList>
           <IonListHeader>
-            <IonTitle>Building Selection</IonTitle>
-          </IonListHeader>
-
+              <IonTitle>Building Selection</IonTitle>
+            </IonListHeader>
           <IonItem>
             <IonLabel>Location</IonLabel>
             <IonSelect>
