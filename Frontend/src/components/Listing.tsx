@@ -24,4 +24,4 @@ const Listing: React.FC<ListingProps>=({address, rent, description, image})=>{
 
     )
 }
-export default Listing
+export default Listing;

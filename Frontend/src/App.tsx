@@ -10,11 +10,17 @@ import {
   IonTabs,
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle, star } from 'ionicons/icons';
+import { ellipse, constructOutline, mapOutline, logInOutline, homeOutline } from 'ionicons/icons';
 import Login from './pages/Login';
-import Tab1 from './pages/Tab1';
+import Building_Selection from './pages/Building_Selection';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
+import {Menu} from './components/Menu';
+
+import React from "react";
+import ReactDOM from "react-dom";
+import { Auth0Provider } from "@auth0/auth0-react";
+
 
 
 
@@ -38,15 +44,27 @@ import '@ionic/react/css/display.css';
 
 
 const App: React.FC = () => (
+  <Auth0Provider
+    domain="dev-ro0qsq4z.us.auth0.com"
+    clientId="lY16manUJRTxvyDP4ztweqYlRdH27EEY"
+    redirectUri={window.location.origin}
+    >
   <IonApp>
     <IonReactRouter>
+      <Menu/>
+        <IonRouterOutlet  id="main">
+          <Route path="/Building_Selection" component={Building_Selection} exact={true} />
+          <Route path="/page-1" component={Tab2} exact={true} />
+          <Route path="/page-2" component={Tab3} exact={true} />
+          <Route exact path="/" render={() => <Redirect to="/home" />} />
+        </IonRouterOutlet>
       <IonTabs>
         <IonRouterOutlet>
           <Route exact path="/Login">
             <Login />
           </Route>
-          <Route exact path="/tab1">
-            <Tab1 />
+          <Route exact path="/Building_Selection">
+            <Building_Selection />
           </Route>
           <Route exact path="/tab2">
             <Tab2 />
@@ -60,25 +78,26 @@ const App: React.FC = () => (
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="login" href = "/login">
-            <IonIcon icon ={star} />
+            <IonIcon icon ={logInOutline} />
             <IonLabel>Login</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon icon={triangle} />
-            <IonLabel>Tab 1</IonLabel>
+          <IonTabButton tab="Building_Selection" href="/Building_Selection">
+            <IonIcon icon={homeOutline} />
+            <IonLabel>Building Search</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
+            <IonIcon icon={mapOutline} />
+            <IonLabel>Map</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon icon={square} />
-            <IonLabel>Tab 3</IonLabel>
+            <IonIcon icon={constructOutline} />
+            <IonLabel>Maitenace</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
     </IonReactRouter>
   </IonApp>
+  </Auth0Provider>
 );
 
 export default App;
