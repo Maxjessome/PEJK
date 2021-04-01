@@ -15,8 +15,8 @@ import {
     return (
       <IonMenu side="end" contentId="main">
         <IonHeader>
-          <IonToolbar color="light">
-            <IonTitle>MENU</IonTitle>
+          <IonToolbar color="dark">
+            <IonTitle>Menu</IonTitle>
           </IonToolbar>
         </IonHeader>
         <IonContent>
@@ -30,8 +30,15 @@ import {
               <IonItem button routerLink={"/About_Us"} routerDirection="none">
                 <IonLabel>About us</IonLabel>
               </IonItem>
+            </IonMenuToggle>
+            <IonMenuToggle auto-hide="false">
               <IonItem button routerLink={"/Login"} routerDirection="none">
                 <IonLabel>Logout</IonLabel>
+              </IonItem>
+            </IonMenuToggle>
+            <IonMenuToggle auto-hide="false">
+              <IonItem button routerLink={"/Tenent_service _req"} routerDirection="none">
+                <IonLabel>Service Request</IonLabel>
               </IonItem>
             </IonMenuToggle>
           </IonList>

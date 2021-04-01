@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonInput, IonItem, IonLabel, IonList, IonItemDivider, IonButtons,} from '@ionic/react';
 import './Tab2.css';
+import { Menu } from '../components/Menu';
 import { NavButtons } from '../components/NavButtons';
 
 export const about_Us: React.FC = () => {

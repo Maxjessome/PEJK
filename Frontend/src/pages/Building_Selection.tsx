@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Tab1.css';
 import { NavButtons } from '../components/NavButtons';
+import Unit from '../components/Units';
 
 const Locations = {
   header: 'Location relative to Dalhousie/Smu campus',
@@ -20,14 +21,19 @@ const buildingParking = {
   subHeader: 'Select parking options'
 };
 
+
 export const Building_Selection: React.FC = () => {
 
   const [buildings, setBuildings] = useState<Array<any>>([]);
   const[location, setLocation] = useState<string[]>([]);
   const[rent, setRent] = useState<string[]>([]);
   const[parking, setParking] = useState<string[]>([]);
+ /* const [units, setUnits] = useState<Array<any>>([]);
+  const [saving, setSaving] = useState(false)
 
-
+  useEffect (()=>{
+    axios.get('http://localhost:3000/Units').then(res => setUnits(res.data.data))
+  },[])*/
   useEffect (()=>{
     axios.get('http://localhost:3000/Building').then(res => setBuildings(res.data.data))
   },[])
@@ -40,10 +46,11 @@ export const Building_Selection: React.FC = () => {
           <IonToolbar>
               <IonTitle>Building Selection</IonTitle>
                   <IonButtons slot="end">
-                <NavButtons/>
+                  <NavButtons/>
               </IonButtons>
             </IonToolbar>
             </IonListHeader>
+          
           <IonItem>
             <IonLabel>Location</IonLabel>
             <IonSelect>
