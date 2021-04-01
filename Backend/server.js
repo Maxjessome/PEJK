@@ -3,9 +3,11 @@ const cors = require('cors');
 const mysql = require('mysql');
 const jwt = require('express-jwt');
 const jwks = require('jwks-rsa');
+const app = express();
+
 const port = process.env.PORT || 8080;
 
-var jwtCheck = jwt({
+const jwtCheck = jwt({
     secret: jwks.expressJwtSecret({
         cache: true,
         rateLimit: true,
@@ -16,13 +18,12 @@ var jwtCheck = jwt({
   issuer: 'https://dev-ro0qsq4z.us.auth0.com/',
   algorithms: ['RS256']
 });
-const app = express();
-app.use(jwtCheck);
+
+app.get(jwtCheck);
 
 app.get('/authorized', function (req, res) {
   res.send('Secured Resource');
 });
-
 
 
 const SELECT_ALL_UNITS_QUERY = 'SELECT * From Units';
@@ -75,8 +76,8 @@ app.get('/Units/add', (req, res) => {
 });
 
 app.get('/Employee/add', (req, res) => {
-    const {Employee_ID, Name, Phone_Num, Address, Username, Password, Maintenance_Job_ID} = req.query;
-    const INSERT_EMPLOYEES_QUERY = `INSERT INTO Employee (Employee_ID, Name, Phone_Num, Address, Username, Password, Maintenance_Job_ID) VALUES('${Employee_ID}', ${Name}, ${Phone_Num}, ${Address}, ${Username}, ${Password}, ${Maintenance_Job_ID})`
+    const {Employee_ID, Name, Phone_Num, Address, Maintenance_Job_ID} = req.query;
+    const INSERT_EMPLOYEES_QUERY = `INSERT INTO Employee (Employee_ID, Name, Phone_Num, Address, Maintenance_Job_ID) VALUES('${Employee_ID}', ${Name}, ${Phone_Num}, ${Address}, ${Maintenance_Job_ID})`
     connection.query(INSERT_EMPLOYEES_QUERY, (err, results) => {
         if(err) {
             return res.send(err)

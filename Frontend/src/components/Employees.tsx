@@ -4,12 +4,10 @@ interface EmployeeProps{
     Employee_ID :  number;
     Name : string;
     Phone_Num : number;
-    Address : string;
-    Username : string;
-    Password : string;
+    Address : string;    
     Maintenance_Job_ID : number;
 }
-const Employee: React.FC<EmployeeProps>=({Employee_ID, Name, Phone_Num, Address, Username, Password, Maintenance_Job_ID})=>{
+const Employee: React.FC<EmployeeProps>=({Employee_ID, Name, Phone_Num, Address, Maintenance_Job_ID})=>{
 
     return(
         <IonCard>
