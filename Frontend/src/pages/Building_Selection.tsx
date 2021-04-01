@@ -5,6 +5,7 @@ import axios from 'axios';
 import './Tab1.css';
 import { NavButtons } from '../components/NavButtons';
 import Unit from '../components/Units';
+import Building_Card from '../components/Building_cards';
 
 const Locations = {
   header: 'Location relative to Dalhousie/Smu campus',
@@ -50,7 +51,11 @@ export const Building_Selection: React.FC = () => {
               </IonButtons>
             </IonToolbar>
             </IonListHeader>
-          
+            <IonItemDivider>
+        <IonLabel>
+          Filters
+        </IonLabel>
+      </IonItemDivider>
           <IonItem>
             <IonLabel>Location</IonLabel>
             <IonSelect>
@@ -98,6 +103,17 @@ export const Building_Selection: React.FC = () => {
           <IonItem>Location: {location} </IonItem>
           <IonItem>Rent: {rent} </IonItem>
           <IonItem>Parking: {parking} </IonItem>
+        </IonList>
+        <IonItemDivider>
+        <IonLabel>
+          Buildings for rent
+        </IonLabel>
+      </IonItemDivider>
+      <IonItem>
+      {buildings.map(buildings => (<Building_Card Address = {buildings.Address}  Units_Unit_ID = {buildings.Units_Unit_ID} Monthly_Rent = {buildings.Monthy_Rent}/>))}
+      </IonItem>
+        <IonList>
+          {buildings.map(buildings => (<Building_Card Address = {buildings.Address}  Units_Unit_ID = {buildings.Units_Unit_ID} Monthly_Rent = {buildings.Monthy_Rent}/>))}
         </IonList>
       </IonContent>
     </IonPage>
