@@ -18,6 +18,8 @@ import Tab3 from './pages/Tab3';
 import {Menu} from './components/Menu';
 import About_Us from './pages/About_Us';
 import Tenent_service_req from './pages/Tenent_service_req';
+import Menu_Tab from './pages/Menu_Tab';
+import Tenant_services from './pages/Tenant_services';
 
 import React from "react";
 import ReactDOM from "react-dom";
@@ -41,6 +43,9 @@ import '@ionic/react/css/text-alignment.css';
 import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
+import Complete_Job from './pages/Complete_Job';
+import Current_Jobs from './pages/Current_Jobs';
+
 
 
 
@@ -62,6 +67,10 @@ const App: React.FC = () => (
           <Route path="/Tab3" component={Tab3} exact={true} />
           <Route path="/Login" component={Login} exact={true} />
           <Route path="/Tenent_service_req" component={Tenent_service_req} exact={true} />
+          <Route path="/Menu_Tab" component={Menu_Tab} exact={true} />
+          <Route path="/Tenant_services" component={Tenant_services} exact={true} />
+          <Route path="/Complete_Job" component={Complete_Job} exact={true} />
+          <Route path="Current_Jobs" component={Current_Jobs} exact={true} />
           <Route exact path="/" render={() => <Redirect to="/home" />} />
         </IonRouterOutlet>
       <IonTabs>
@@ -84,11 +93,17 @@ const App: React.FC = () => (
           <Route exact path="/Tenent_service_req">
             <Tenent_service_req />
           </Route>
-          <Route exact path="/">
-            <Redirect to="/Login" />
+          <Route exact path="/Tenant_Services">
+            <Tenant_services/>
           </Route>
-          <Route exact path="/components">
-            <Redirect to="/Menu" />
+          <Route exact path="/Menu_Tab">
+            <Menu_Tab/>
+          </Route>
+          <Route exact path="/Complete_Job">
+            <Complete_Job/>
+          </Route>
+          <Route exact path="/Current_Jobs">
+            <Current_Jobs/>
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
@@ -100,7 +115,7 @@ const App: React.FC = () => (
             <IonIcon icon={mapOutline} />
             <IonLabel>Map</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="Menu" href="/Menu">
+          <IonTabButton tab="Menu_Tab" href="/Menu_Tab">
             <IonIcon icon={menuOutline} />
             <IonLabel>Menu</IonLabel>
           </IonTabButton>
