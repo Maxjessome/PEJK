@@ -3,10 +3,11 @@ const cors = require('cors');
 const mysql = require('mysql');
 const jwt = require('express-jwt');
 const jwks = require('jwks-rsa');
+const app = express();
 
 const port = process.env.PORT || 8080;
 
-var jwtCheck = jwt({
+const jwtCheck = jwt({
     secret: jwks.expressJwtSecret({
         cache: true,
         rateLimit: true,
@@ -18,13 +19,12 @@ var jwtCheck = jwt({
   algorithms: ['RS256']
 });
 
-app.use(jwtCheck);
+app.get(jwtCheck);
 
 app.get('/authorized', function (req, res) {
   res.send('Secured Resource');
 });
 
-const app = express();
 
 const SELECT_ALL_UNITS_QUERY = 'SELECT * From Units';
 const SELECT_UNIT_BEDS_QUERY = 'SELECT * From Units ORDER BY Bedrooms';
