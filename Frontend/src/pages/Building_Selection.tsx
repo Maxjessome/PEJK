@@ -104,15 +104,12 @@ export const Building_Selection: React.FC = () => {
           <IonItem>Rent: {rent} </IonItem>
           <IonItem>Parking: {parking} </IonItem>
         </IonList>
-        <IonItemDivider>
-        <IonLabel>
-          Buildings for rent
-        </IonLabel>
-      </IonItemDivider>
-      <IonItem>
-      {buildings.map(buildings => (<Building_Card Address = {buildings.Address}  Units_Unit_ID = {buildings.Units_Unit_ID} Monthly_Rent = {buildings.Monthy_Rent}/>))}
-      </IonItem>
         <IonList>
+          <IonItemDivider>
+            <IonLabel>
+              Buildings for rent
+            </IonLabel>
+          </IonItemDivider>
           {buildings.map(buildings => (<Building_Card Address = {buildings.Address}  Units_Unit_ID = {buildings.Units_Unit_ID} Monthly_Rent = {buildings.Monthy_Rent}/>))}
         </IonList>
       </IonContent>
