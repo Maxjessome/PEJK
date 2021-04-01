@@ -16,7 +16,8 @@ import Building_Selection from './pages/Building_Selection';
 import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 import {Menu} from './components/Menu';
-
+import About_Us from './pages/About_Us';
+import Tenent_service_req from './pages/Tenent_service_req';
 
 import React from "react";
 import ReactDOM from "react-dom";
@@ -40,7 +41,8 @@ import '@ionic/react/css/text-alignment.css';
 import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
-import About_Us from './pages/About_Us';
+
+
 
 
 
@@ -59,6 +61,7 @@ const App: React.FC = () => (
           <Route path="/About_Us" component={About_Us} exact={true} />
           <Route path="/page-2" component={Tab3} exact={true} />
           <Route path="/Login" component={Login} exact={true} />
+          <Route path="/Tenent_service_req" component={Tenent_service_req} exact={true} />
           <Route exact path="/" render={() => <Redirect to="/home" />} />
         </IonRouterOutlet>
       <IonTabs>
@@ -75,8 +78,14 @@ const App: React.FC = () => (
           <Route exact path="/About_Us">
             <About_Us />
           </Route>
+          <Route exact path="/Tenent_service_req">
+            <Tenent_service_req />
+          </Route>
           <Route exact path="/">
             <Redirect to="/Login" />
+          </Route>
+          <Route exact path="/components">
+            <Redirect to="/Menu" />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
@@ -87,6 +96,10 @@ const App: React.FC = () => (
           <IonTabButton tab="tab2" href="/tab2">
             <IonIcon icon={mapOutline} />
             <IonLabel>Map</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="Menu" href="/Menu">
+            <IonIcon icon={menuOutline} />
+            <IonLabel>Menu</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
