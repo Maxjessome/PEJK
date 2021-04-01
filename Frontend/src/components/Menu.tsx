@@ -41,6 +41,11 @@ import {
                 <IonLabel>Service Request</IonLabel>
               </IonItem>
             </IonMenuToggle>
+            <IonMenuToggle auto-hide="false">
+              <IonItem button routerLink={"/Tab3"} routerDirection="none">
+                <IonLabel>Tab3</IonLabel>
+              </IonItem>
+            </IonMenuToggle>
           </IonList>
         </IonContent>
       </IonMenu>

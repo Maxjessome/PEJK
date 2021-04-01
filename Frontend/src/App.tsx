@@ -59,7 +59,7 @@ const App: React.FC = () => (
         <IonRouterOutlet  id="main">
           <Route path="/Building_Selection" component={Building_Selection} exact={true} />
           <Route path="/About_Us" component={About_Us} exact={true} />
-          <Route path="/page-2" component={Tab3} exact={true} />
+          <Route path="/Tab3" component={Tab3} exact={true} />
           <Route path="/Login" component={Login} exact={true} />
           <Route path="/Tenent_service_req" component={Tenent_service_req} exact={true} />
           <Route exact path="/" render={() => <Redirect to="/home" />} />
@@ -68,6 +68,9 @@ const App: React.FC = () => (
         <IonRouterOutlet>
           <Route exact path="/Login">
             <Login />
+          </Route>
+          <Route exact path="/Tab3">
+            <Tab3 />
           </Route>
           <Route exact path="/Building_Selection">
             <Building_Selection />
