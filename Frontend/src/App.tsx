@@ -11,6 +11,8 @@ import {
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, constructOutline, mapOutline, logInOutline, homeOutline, menuOutline } from 'ionicons/icons';
+import Loading from './components/loading';
+import ProtectedRoute from './components/private-route';
 import Login from './pages/Login';
 import Building_Selection from './pages/Building_Selection';
 import Tab2 from './pages/Tab2';
@@ -20,6 +22,8 @@ import About_Us from './pages/About_Us';
 import Tenent_service_req from './pages/Tenent_service_req';
 import Menu_Tab from './pages/Menu_Tab';
 import Tenant_services from './pages/Tenant_services';
+import { useAuth0 } from "@auth0/auth0-react";
+
 
 import React from "react";
 import ReactDOM from "react-dom";
@@ -69,9 +73,9 @@ const App: React.FC = () => (
           <Route path="/Tenent_service_req" component={Tenent_service_req} exact={true} />
           <Route path="/Menu_Tab" component={Menu_Tab} exact={true} />
           <Route path="/Tenant_services" component={Tenant_services} exact={true} />
-          <Route path="/Complete_Job" component={Complete_Job} exact={true} />
-          <Route path="Current_Jobs" component={Current_Jobs} exact={true} />
-          <Route exact path="/" render={() => <Redirect to="/home" />} />
+          <ProtectedRoute path="/Complete_Job" component={Complete_Job} exact={true} />
+          <ProtectedRoute path="/Current_Jobs" component={Current_Jobs} exact={true} />
+          <Route exact path="/" render={() => <Redirect to="/Tab2" />} />
         </IonRouterOutlet>
       <IonTabs>
         <IonRouterOutlet>
