@@ -20,7 +20,8 @@ import About_Us from './pages/About_Us';
 import Tenent_service_req from './pages/Tenent_service_req';
 import Menu_Tab from './pages/Menu_Tab';
 import Tenant_services from './pages/Tenant_services';
-
+import Complete_Job from './pages/Complete_Job';
+import Current_Jobs from './pages/Current_Jobs';
 import React from "react";
 import ReactDOM from "react-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
@@ -43,8 +44,7 @@ import '@ionic/react/css/text-alignment.css';
 import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
-import Complete_Job from './pages/Complete_Job';
-import Current_Jobs from './pages/Current_Jobs';
+
 
 
 
@@ -70,7 +70,7 @@ const App: React.FC = () => (
           <Route path="/Menu_Tab" component={Menu_Tab} exact={true} />
           <Route path="/Tenant_services" component={Tenant_services} exact={true} />
           <Route path="/Complete_Job" component={Complete_Job} exact={true} />
-          <Route path="Current_Jobs" component={Current_Jobs} exact={true} />
+          <Route path="/Current_Jobs" component={Current_Jobs} exact={true} />
           <Route exact path="/" render={() => <Redirect to="/home" />} />
         </IonRouterOutlet>
       <IonTabs>

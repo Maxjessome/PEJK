@@ -1,4 +1,4 @@
-import { IonContent, IonItem, IonLabel, IonList, IonListHeader, IonSelect, IonSelectOption, IonPage, IonItemDivider, IonTitle, IonButtons, IonToolbar } from '@ionic/react';
+import { IonContent, IonItem, IonLabel, IonList, IonListHeader, IonSelect, IonSelectOption, IonPage, IonItemDivider, IonTitle, IonButtons, IonToolbar, IonButton } from '@ionic/react';
 import Listing from '../components/Buildings';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -42,7 +42,6 @@ export const Building_Selection: React.FC = () => {
   return(
     <IonPage>
       <IonContent>
-        <IonList>
           <IonListHeader>
           <IonToolbar>
               <IonTitle>Building Selection</IonTitle>
@@ -56,7 +55,9 @@ export const Building_Selection: React.FC = () => {
           Filters
         </IonLabel>
       </IonItemDivider>
-          <IonItem>
+      
+        <IonButton>   
+            <IonItem>
             <IonLabel>Location</IonLabel>
             <IonSelect>
               interfaceOptions={location}
@@ -68,8 +69,9 @@ export const Building_Selection: React.FC = () => {
               <IonSelectOption value="On_Campus">On Campus</IonSelectOption>
               <IonSelectOption value="Off_Camous">Off Campus</IonSelectOption>
             </IonSelect>
-          </IonItem>
-
+            </IonItem>
+            </IonButton> 
+          <IonButton>
           <IonItem>
             <IonLabel>Rent</IonLabel>
             <IonSelect>
@@ -83,7 +85,9 @@ export const Building_Selection: React.FC = () => {
               <IonSelectOption value="$500+">$500+</IonSelectOption>
             </IonSelect>
           </IonItem>
+          </IonButton>
 
+          <IonButton>
           <IonItem>
             <IonLabel>Parking</IonLabel>
             <IonSelect>
@@ -98,12 +102,14 @@ export const Building_Selection: React.FC = () => {
               <IonSelectOption value="No_Parking">No Parking</IonSelectOption>
             </IonSelect>
           </IonItem>
+          </IonButton>
 
           <IonItemDivider>Displaying Buildings Based of Your Search Criteria</IonItemDivider>
           <IonItem>Location: {location} </IonItem>
           <IonItem>Rent: {rent} </IonItem>
           <IonItem>Parking: {parking} </IonItem>
-        </IonList>
+    
+
         <IonList>
           <IonItemDivider>
             <IonLabel>

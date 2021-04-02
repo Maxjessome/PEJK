@@ -1,7 +1,8 @@
 import './Tenent_service_req.css';
 import React, { useEffect, useState } from 'react';
-import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import P_reqs from '../components/Past_requests';
+import { arrowBack } from 'ionicons/icons';
 
 /*
 This will go under the button when the backend is set up
@@ -16,6 +17,9 @@ export const Tenant_services: React.FC = () => {
         <IonHeader>
             <IonToolbar>
                 <IonTitle>Tenant Services</IonTitle>
+                <IonButtons slot="start">
+                        <IonBackButton color="#ffa200" text="Back" icon={arrowBack} defaultHref="/Menu_Tab" />
+                    </IonButtons>
             </IonToolbar>
         </IonHeader>
 
