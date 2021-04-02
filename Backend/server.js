@@ -1,30 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const mysql = require('mysql');
-const jwt = require('express-jwt');
-const jwks = require('jwks-rsa');
 const app = express();
-
-const port = process.env.PORT || 8080;
-
-const jwtCheck = jwt({
-    secret: jwks.expressJwtSecret({
-        cache: true,
-        rateLimit: true,
-        jwksRequestsPerMinute: 5,
-        jwksUri: 'https://dev-ro0qsq4z.us.auth0.com/.well-known/jwks.json'
-  }),
-  audience: 'http://localhost:8100',
-  issuer: 'https://dev-ro0qsq4z.us.auth0.com/',
-  algorithms: ['RS256']
-});
-
-app.get(jwtCheck);
-
-app.get('/authorized', function (req, res) {
-  res.send('Secured Resource');
-});
-
 
 const SELECT_ALL_UNITS_QUERY = 'SELECT * From Units';
 const SELECT_UNIT_BEDS_QUERY = 'SELECT * From Units ORDER BY Bedrooms';
@@ -204,7 +181,6 @@ app.get('/Maintenenace', (req, res) => {
         }
     })
 })
-app.listen(port);
 
 app.listen(3000, () => {
     console.log(`UNITS server listening on port 3000`)
