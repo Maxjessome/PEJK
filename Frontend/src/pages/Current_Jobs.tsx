@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { IonButton, IonContent, IonHeader, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import Open_Jobs from '../components/Current_Job_Cards';
+import { arrowBack } from 'ionicons/icons';
 
 const Jobs =[
    { Request_ID :200, Request_type : "Heating", Description : "My heating doesn't work at all :(", Date_requested : 19990315},
@@ -15,6 +16,9 @@ export const Current_jobs: React.FC = () => {
             <IonHeader>
                 <IonToolbar>
                     <IonTitle>Current_Jobs</IonTitle>
+                    <IonButtons slot="start">
+                        <IonBackButton color="#ffa200" text="Back" icon={arrowBack} defaultHref="/Menu_tab" />
+                    </IonButtons>
                 </IonToolbar>
                 <IonList>
                     {Jobs.map((Job) =><Open_Jobs {...Job}/>)}

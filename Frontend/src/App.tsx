@@ -56,6 +56,7 @@ import Current_Jobs from './pages/Current_Jobs';
 
 
 
+
 const App: React.FC = () => (
   <Auth0Provider
     domain="dev-ro0qsq4z.us.auth0.com"
