@@ -15,7 +15,7 @@ import Loading from './components/loading';
 import ProtectedRoute from './components/private-route';
 import Login from './pages/Login';
 import Building_Selection from './pages/Building_Selection';
-import Tab2 from './pages/Tab2';
+import Map from './pages/Map';
 import Tab3 from './pages/Tab3';
 import {Menu} from './components/Menu';
 import About_Us from './pages/About_Us';
@@ -23,7 +23,8 @@ import Tenent_service_req from './pages/Tenent_service_req';
 import Menu_Tab from './pages/Menu_Tab';
 import Tenant_services from './pages/Tenant_services';
 import { useAuth0 } from "@auth0/auth0-react";
-
+import Complete_Job from './pages/Complete_Job';
+import Current_Jobs from './pages/Current_Jobs';
 
 import React from "react";
 import ReactDOM from "react-dom";
@@ -47,8 +48,7 @@ import '@ionic/react/css/text-alignment.css';
 import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
-import Complete_Job from './pages/Complete_Job';
-import Current_Jobs from './pages/Current_Jobs';
+
 
 
 
@@ -89,8 +89,8 @@ const App: React.FC = () => (
           <Route exact path="/Building_Selection">
             <Building_Selection />
           </Route>
-          <Route exact path="/tab2">
-            <Tab2 />
+          <Route exact path="/Map">
+            <Map/>
           </Route>
           <Route exact path="/About_Us">
             <About_Us />

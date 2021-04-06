@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonInput, IonItem, IonLabel, IonList, IonItemDivider, IonButtons,} from '@ionic/react';
 import './Tab2.css';
-import { Menu } from '../components/Menu';
-import { NavButtons } from '../components/NavButtons';
-export const Tab2: React.FC = () => {
+
+export const Map: React.FC = () => {
 
   const [text, setText] = useState<string>();
   const [number, setNumber] = useState<number>();
@@ -13,9 +12,6 @@ export const Tab2: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonTitle>PEJK Map</IonTitle>
-            <IonButtons slot="end">
-                <NavButtons/>
-            </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent>
@@ -26,4 +22,4 @@ export const Tab2: React.FC = () => {
   );
 };
 
-export default Tab2;
+export default Map;

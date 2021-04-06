@@ -1,7 +1,8 @@
 import { IonButton, IonMenuButton, IonContent, IonList, IonItem, IonLabel, IonMenuToggle, IonHeader, IonMenu, IonTitle, IonToolbar, IonPage } from "@ionic/react";
 import React, { useEffect } from "react";
+import './Tab2.css';
 
-export const Menu_Tab: React.FC = () => {
+export const Menu_tab_tenant: React.FC = () => {
     return (
         <IonPage>
             <IonHeader>
@@ -24,16 +25,10 @@ export const Menu_Tab: React.FC = () => {
                     Tenant Services
                 </IonButton>
                 <IonButton color="primary" expand="block" fill="solid"  routerLink={"/Login"} routerDirection="none">
-                    Logout
+                    LogOut
                 </IonButton>
-                <IonButton color="primary" expand="block" fill="solid"  routerLink={"/Current_Jobs"} routerDirection="none">
-                    Current Jobs
-                </IonButton>
-                <IonButton color="primary" expand="block" fill="solid"  routerLink={"/Tab3"} routerDirection="none">
-                tab 3
-                </IonButton>
-            </IonContent>
+         </IonContent>
     </IonPage>
     );
   };
-  export default Menu_Tab;
+  export default Menu_tab_tenant;
