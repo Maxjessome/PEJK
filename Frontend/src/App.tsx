@@ -23,6 +23,7 @@ import Tenent_service_req from './pages/Tenent_service_req';
 import Menu_Tab from './pages/Menu_Tab';
 import Tenant_services from './pages/Tenant_services';
 import { useAuth0 } from "@auth0/auth0-react";
+import ExternalApi from "./components/external-api"
 
 
 import React from "react";

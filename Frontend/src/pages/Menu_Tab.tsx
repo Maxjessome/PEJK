@@ -1,6 +1,7 @@
 import { IonButton, IonMenuButton, IonContent, IonList, IonItem, IonLabel, IonMenuToggle, IonHeader, IonMenu, IonTitle, IonToolbar, IonPage } from "@ionic/react";
 import React, { useEffect } from "react";
 import './Tab2.css';
+import callRoleBasedEndpoint from "../components/external-api"
 
 export const Menu_Tab: React.FC = () => {
     return (
@@ -24,7 +25,7 @@ export const Menu_Tab: React.FC = () => {
                 <IonButton color="primary" expand="block" fill="solid"  routerLink={"/Login"} routerDirection="none">
                     Logout
                 </IonButton>
-                <IonButton color="primary" expand="block" fill="solid"  routerLink={"/Current_Jobs"} routerDirection="none">
+                <IonButton color="primary" expand="block" fill="solid"  routerLink={"/Current_Jobs"} routerDirection="none" onClick = {callRoleBasedEndpoint}>
                     Current Jobs
                 </IonButton>
                 <IonButton color="primary" expand="block" fill="solid"  routerLink={"/Tab3"} routerDirection="none">
