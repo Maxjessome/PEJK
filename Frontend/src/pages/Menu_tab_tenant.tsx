@@ -1,12 +1,8 @@
 import { IonButton, IonMenuButton, IonContent, IonList, IonItem, IonLabel, IonMenuToggle, IonHeader, IonMenu, IonTitle, IonToolbar, IonPage } from "@ionic/react";
 import React, { useEffect } from "react";
-<<<<<<< HEAD
 import './Tab2.css';
-import callRoleBasedEndpoint from "../components/external-api"
-=======
->>>>>>> 4af8bdb5cba8359149f64c316e7d980d3e60fa9c
 
-export const Menu_Tab: React.FC = () => {
+export const Menu_tab_tenant: React.FC = () => {
     return (
         <IonPage>
             <IonHeader>
@@ -29,16 +25,10 @@ export const Menu_Tab: React.FC = () => {
                     Tenant Services
                 </IonButton>
                 <IonButton color="primary" expand="block" fill="solid"  routerLink={"/Login"} routerDirection="none">
-                    Logout
+                    LogOut
                 </IonButton>
-                <IonButton color="primary" expand="block" fill="solid"  routerLink={"/Current_Jobs"} routerDirection="none" onClick = {callRoleBasedEndpoint}>
-                    Current Jobs
-                </IonButton>
-                <IonButton color="primary" expand="block" fill="solid"  routerLink={"/Tab3"} routerDirection="none">
-                tab 3
-                </IonButton>
-            </IonContent>
+         </IonContent>
     </IonPage>
     );
   };
-  export default Menu_Tab;
+  export default Menu_tab_tenant;
